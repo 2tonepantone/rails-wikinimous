@@ -1,2 +1,18 @@
-<h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+<div class="container">
+  <h1>Add New Article</h1>
+    <%= form_for(@article) do |f| %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+      <div class="form-group">
+        <%= f.label :content %>
+        <%= f.text_field :content, class: "form-control" %>
+      </div>
+      <%= f.submit %>
+    </div>
+    <% end %>
+</div>
+<div class="container mt-4">
+  <%= link_to "⏪", articles_path %>
+</div>

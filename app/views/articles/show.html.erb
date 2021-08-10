@@ -1,2 +1,19 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div class="container">
+  <div class="cards mt-4">
+    <div class="card mb-2">
+      <div class="card-header d-flex justify-content-between">
+        <%= link_to "#{@article.title}", article_path(@article) %>
+          <%= link_to edit_article_path(@article) do %>
+            <button type="button" class="btn btn-outline-secondary">✏️</button>
+          <% end %>
+        <%= link_to "🗑", article_path(@article), method: :delete, data:
+            { confirm: "Really delete #{@article.title}?" }
+        %>
+      </div>
+      <%= @article.content %>
+    </div>
+  </div>
+</div>
+<div class="container mt-4">
+  <%= link_to "🏠", articles_path %>
+</div>
